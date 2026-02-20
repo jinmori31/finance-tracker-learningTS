@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { UsersModule } from './modules/users/users.module';
 import { TransactionsModule } from './modules/transactions/transactions.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://jakeregunay_db_user:4JVpzpZDivLIj3Sg@finance-tracker.4wfcvlt.mongodb.net/?appName=finance-tracker'),
+     MongooseModule.forRoot(process.env.MONGODB_URI || ''),
     UsersModule,
     TransactionsModule
   ],
