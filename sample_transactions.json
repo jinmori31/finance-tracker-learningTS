@@ -1,0 +1,28 @@
+[
+  {
+    "amount": 100.50,
+    "category": "Food",
+    
+    "description": "Groceries"
+  },
+  {
+    "amount": 250.00,
+    "category": "Housing",
+    "description": "Rent"
+  },
+  {
+    "amount": 15.75,  
+    "category": "Entertainment",
+    "description": "Coffee"
+  },
+  {
+    "amount": 60.00,
+    "category": "Transportation",
+    "description": "Gas"
+  },
+  {
+    "amount": 120.00,
+    "category": "Utilities",
+    "description": "Electricity Bill"
+  }
+]
