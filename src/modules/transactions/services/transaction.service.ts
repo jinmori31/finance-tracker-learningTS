@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTransactionDto } from './dto/create-transaction.dto';
+import { CreateTransactionDto } from '../dto/create-transaction.dto';
 import { randomUUID } from 'crypto';
-import { Transaction } from './types/transaction.entity';
+import { Transaction } from '../types/transaction.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
@@ -16,5 +16,10 @@ export class TransactionsService {
     const createdTransaction = new this.transactionModel(createTransactionDto);
     return createdTransaction.save();
   }
+
+  findAll(): Promise<Transaction[]> {
+    return this.transactionModel.find().exec();
+  }
+
 }
 
