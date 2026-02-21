@@ -21,5 +21,10 @@ export class TransactionsService {
     return this.transactionModel.find().exec();
   }
 
+  async findByID(id :string): Promise<Transaction | null> {
+    const transaction = await this.transactionModel.findById(id).exec();
+    return transaction
+  }
+
 }
 

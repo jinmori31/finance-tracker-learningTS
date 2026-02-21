@@ -1,4 +1,4 @@
-import { Body, Controller, Post , Get} from '@nestjs/common';
+import { Body, Controller, Post , Get, Param} from '@nestjs/common';
 import { CreateTransactionDto } from '../dto/create-transaction.dto';
 import { TransactionsService } from '../services/transaction.service'; 
 
@@ -14,5 +14,10 @@ export class TransactionsController {
   @Get()
   findAll() {
     return this.transactionsService.findAll();
+  }
+
+  @Get(':id')
+  findById(@Param('id') id: string) { 
+    return this.transactionsService.findByID(id);
   }
 }
