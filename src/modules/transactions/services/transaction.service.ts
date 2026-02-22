@@ -30,5 +30,10 @@ export class TransactionsService {
     const transaction = await this.transactionModel.findByIdAndUpdate(id, updateTransactionDto, { new: true }).exec();
     return transaction;
   }
+
+  async remove(id: string): Promise<Transaction | null> {
+    const deletedTransaction = await this.transactionModel.findByIdAndDelete(id).exec();
+    return deletedTransaction;
+  }
 }
 
